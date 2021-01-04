@@ -1,0 +1,9 @@
+{
+    "id": {
+        "name" : "Example",
+        "aws_region" : "us-east-2",
+        "launchTemplateId" : "",
+        "launchTemplateVersion" : "",
+        "s3_storage_path" : "s3://mybucket/path/to/world"
+    },
+}
