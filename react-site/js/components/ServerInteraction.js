@@ -43,6 +43,7 @@ class ServerInteraction extends Component {
     const server = this.state.server_id;
     const url = API_ENDPOINTS["start_server"];
     fetch(url, {
+      credentials: 'same-origin',
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -66,7 +67,7 @@ class ServerInteraction extends Component {
   handleStopServer(event) {
     event.preventDefault();
     const url = API_ENDPOINTS["stop_server"];
-    fetch(url)
+    fetch(url, {credentials: 'same-origin'})
       .then(res => res.json())
       .then(
         (data) => {},

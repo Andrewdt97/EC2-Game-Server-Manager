@@ -14,7 +14,6 @@ isServerRunning = False
 serverInfo = {}
 password = CONFIG['password']
 
-@csrf_exempt
 def startServer(request):
     if request.method == 'POST':
 
@@ -39,7 +38,6 @@ def startServer(request):
     return JsonResponse({"success" : False,
                                 "message" : "API recieved GET call to start-server."})
 
-@csrf_exempt
 def stopServer(request):
     global isServerRunning
     isServerRunning = False
@@ -49,7 +47,6 @@ def stopServer(request):
     return JsonResponse({"success" : True,
                                 "message" : "Server is shutting down..."})
 
-@csrf_exempt
 def getServerStatus(request):
     data = {
         "isRunning" : isServerRunning
@@ -59,7 +56,6 @@ def getServerStatus(request):
 
     return JsonResponse(data)
 
-@csrf_exempt
 def getServerList(request):
     servers = aws_interface.getServerList()
     return JsonResponse( {"servers" : servers} )

@@ -30,7 +30,7 @@ class ServerInterface extends Component {
   }
 
   fetchServerList() {
-    fetch(API_ENDPOINTS["get_configs"])
+    fetch(API_ENDPOINTS["get_configs"], {credentials: 'same-origin'})
       .then(res => res.json())
       .then(
         (result) => {
@@ -44,7 +44,7 @@ class ServerInterface extends Component {
   }
 
   fetchServerStatus() {
-    fetch(API_ENDPOINTS["server_status"])
+    fetch(API_ENDPOINTS["server_status"], {credentials: 'same-origin'})
       .then(res => res.json())
       .then(
         (result) => {
